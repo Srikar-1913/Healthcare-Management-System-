@@ -26,27 +26,27 @@ public class HospitalController {
         return hospitalService.viewAllHospitals();
     }
 
-    @GetMapping("getHospitalById/{id}")
+    @GetMapping("/getHospitalById/{id}")
     public Hospital getHospitalById(@PathVariable int id) {
         return hospitalService.getHospitalById(id);
     }
 
-    @GetMapping("searchHospital/location/{location}")
+    @GetMapping("/searchHospital/location/{location}")
     public List<Hospital> searchHospitalByLocation(@PathVariable String location) {
         return hospitalService.searchHospitalByLocation(location);
     }
 
-    @PutMapping("changeHospital/{id}/{location}")
+    @PutMapping("/changeHospital/{id}/{location}")
     public Hospital changeHospitalLocation(@PathVariable int id, @PathVariable String location) {
         return hospitalService.changeHospitalLocation(id, location);
     }
 
-    @DeleteMapping("deleteHospital/{id}")
+    @DeleteMapping("/deleteHospital/{id}")
     public String removeHospital(@PathVariable int id) {
         return hospitalService.removeHospital(id);
     }
 
-    @GetMapping("hospital/count")
+    @GetMapping("/hospital/count")
     public Integer getHospitalCount() {
         return hospitalService.getHospitalCount();
     }

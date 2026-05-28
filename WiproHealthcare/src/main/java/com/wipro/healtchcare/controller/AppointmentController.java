@@ -29,31 +29,31 @@ public class AppointmentController {
         return appointmentService.getAllAppointments();
     }
 
-    @GetMapping("getAppointmentById/{id}")
+    @GetMapping("/getAppointmentById/{id}")
     public Appointment getAppointmentById(@PathVariable int id) {
     	
         return appointmentService.getAppointmentById(id);
     }
 
-    @GetMapping("getAppointment/date/{date}")
+    @GetMapping("/getAppointment/date/{date}")
     public List<Appointment> getAppointmentByDate(@PathVariable String date) {
     	
         return appointmentService.getAppointmentsByDate(LocalDate.parse(date));
     }
 
-    @GetMapping("getAppointment/status/{status}")
+    @GetMapping("/getAppointment/status/{status}")
     public List<Appointment> getAppointmentByStatus(@PathVariable String status) {
     	
         return appointmentService.getAppointmentsByStatus(status);
     }
 
-    @PutMapping("updateAppointmentStatus/{id}/{status}")
+    @PutMapping("/updateAppointmentStatus/{id}/{status}")
     public Appointment updateAppointmentStatus(@PathVariable int id, @PathVariable String status) {
     	
         return appointmentService.updateAppointmentStatus(id, status);
     }
 
-    @DeleteMapping("cancelAppointment/{id}")
+    @DeleteMapping("/cancelAppointment/{id}")
     public String cancelAppointment(@PathVariable int id) {
     	
         return appointmentService.cancelAppointment(id);

@@ -22,7 +22,7 @@ public class DoctorController {
         return doctorService.addDoctor(doctor);
     }
 
-    @GetMapping("getAllDoctors")
+    @GetMapping("/getAllDoctors")
     public List<Doctor> getAllDoctors() {
     	
         return doctorService.getAllDoctors();
@@ -34,7 +34,7 @@ public class DoctorController {
         return doctorService.getDoctorById(id);
     }
 
-    @PutMapping("updateSpecialization/{id}/{specialization}")
+    @PutMapping("/updateSpecialization/{id}/{specialization}")
     public Doctor updateSpecialization(@PathVariable int id, @PathVariable String specialization) {
     	
         return doctorService.updateDoctorSpecialization(id, specialization);

@@ -28,13 +28,13 @@ public class PatientController {
         return patientService.addPatient(patient);
     }
 	
-	@GetMapping("getAllPatients")
+	@GetMapping("/getAllPatients")
     public List<Patient> getAllPatients() {
 		
         return patientService.getAllPatients();
     }
 	
-	@GetMapping("getById/{id}")
+	@GetMapping("/getById/{id}")
     public Patient getPatientById(@PathVariable int id) {
 		
         return patientService.getPatientById(id);

@@ -25,7 +25,7 @@ public class DoctorDto {
 	
 	@NotBlank(message = "Phone number is required")
 	@Pattern(
-			regexp = "^[0-9] {10}$", message = "Phone number exactly contain 10 digits")
+			regexp = "^[0-9]{10}$", message = "Phone number exactly contain 10 digits")
 	private String phone;
 	
 }
