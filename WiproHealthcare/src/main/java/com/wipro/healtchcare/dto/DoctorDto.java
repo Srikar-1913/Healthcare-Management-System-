@@ -1,6 +1,7 @@
 package com.wipro.healtchcare.dto;
 
 import jakarta.validation.constraints.NotBlank;
+
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,4 +27,5 @@ public class DoctorDto {
 	@Pattern(
 			regexp = "^[0-9] {10}$", message = "Phone number exactly contain 10 digits")
 	private String phone;
+	
 }

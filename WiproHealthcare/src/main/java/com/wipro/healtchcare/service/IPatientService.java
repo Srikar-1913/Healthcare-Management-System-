@@ -2,6 +2,7 @@ package com.wipro.healtchcare.service;
 
 import java.util.List;
 
+
 import com.wipro.healtchcare.dto.PatientDto;
 import com.wipro.healtchcare.entity.Patient;
 
@@ -13,11 +14,11 @@ public interface IPatientService {
 	
 	Patient getPatientById(int patientId);
 	
-	Patient findPatientsByDisease(String disease);
+	List<Patient> findPatientsByDisease(String disease);
 	
-	Patient getPatientsByGender(String gender);
+	List<Patient> getPatientsByGender(String gender);
 	
-	Patient getPatientsByAge(int PatientAge);
+	List<Patient> getPatientsByAge(int PatientAge);
 	
 	String deletePatient(int patientId);
 }

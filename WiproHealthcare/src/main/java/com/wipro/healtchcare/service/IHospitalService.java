@@ -2,6 +2,7 @@ package com.wipro.healtchcare.service;
 
 import java.util.List;
 
+
 import com.wipro.healtchcare.dto.HospitalDto;
 import com.wipro.healtchcare.entity.Hospital;
 
@@ -18,4 +19,6 @@ public interface IHospitalService {
 	Hospital changeHospitalLocation(int hospitalId, String location);
 	
 	String removeHospital(int hospitalId);
+	
+	Integer getHospitalCount();
 }
