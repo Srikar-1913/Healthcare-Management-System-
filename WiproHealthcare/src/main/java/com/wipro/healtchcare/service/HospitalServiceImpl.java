@@ -18,7 +18,7 @@ public class HospitalServiceImpl implements IHospitalService {
     private Hospital mapToHospital(HospitalDto hospital) {
     	
         Hospital h = new Hospital();
-        h.setHospitalId(hospital.getHospitalId());
+       // h.setHospitalId(hospital.getHospitalId());
         h.setHospitalName(hospital.getHospitalName());
         h.setLocation(hospital.getLocation());
         

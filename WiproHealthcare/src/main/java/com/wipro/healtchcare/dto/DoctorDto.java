@@ -15,7 +15,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class DoctorDto {
-	private int doctorId;
+	//private int doctorId;
 	
 	@NotBlank(message = "Doctor name connot be empty")
 	private String doctorName;
@@ -24,8 +24,9 @@ public class DoctorDto {
 	private String specialization;
 	
 	@NotBlank(message = "Phone number is required")
-	@Pattern(
-			regexp = "^[0-9]{10}$", message = "Phone number exactly contain 10 digits")
+	@Pattern(regexp = "^[0-9]{10}$", message = "Phone number exactly contain 10 digits")
 	private String phone;
+	
+	private int hospitalId;
 	
 }

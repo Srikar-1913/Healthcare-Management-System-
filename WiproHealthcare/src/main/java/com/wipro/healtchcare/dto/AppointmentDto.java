@@ -18,14 +18,16 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class AppointmentDto {
-	private int appointmentId;
+	//private int appointmentId;
 	
 	@NotNull(message = "Appointment date is required")
 	@FutureOrPresent(message = "Appointment date cannot be in the past")
 	private LocalDate appointmentDate;
 	
 	@NotBlank(message = "Status is required")
-	@Pattern(
-			regexp = "Pending | Confirmed | Cancelled | Completed", message = " Status must be Pending, Confirmed, Cancelled or Completed")
+	@Pattern(regexp = "Pending|Confirmed|Cancelled|Completed", message = " Status must be Pending, Confirmed, Cancelled or Completed")
 	private String status;
+	
+	private int doctorId;
+	private int patientId;
 }

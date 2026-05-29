@@ -7,21 +7,30 @@ import org.springframework.stereotype.Service;
 
 import com.wipro.healtchcare.dto.DoctorDto;
 import com.wipro.healtchcare.entity.Doctor;
+import com.wipro.healtchcare.entity.Hospital;
 import com.wipro.healtchcare.repository.IDoctorRepository;
+import com.wipro.healtchcare.repository.IHosptitalRepository;
 
 @Service
 public class DoctorServiceImpl implements IDoctorService {
 
     @Autowired
     private IDoctorRepository doctorRepo;
+    
+    @Autowired
+    private IHosptitalRepository hospitalRepo;
 
     private Doctor mapToDoctor(DoctorDto doctor) {
     	
         Doctor d = new Doctor();
-        d.setDoctorId(doctor.getDoctorId());
+        
+        //d.setDoctorId(doctor.getDoctorId());
         d.setDoctorName(doctor.getDoctorName());
         d.setSpecialization(doctor.getSpecialization());
         d.setPhone(doctor.getPhone());
+        
+        Hospital h = hospitalRepo.findById(doctor.getHospitalId()).orElse(null);
+        d.setHospital(h);
         
         return d;
     }

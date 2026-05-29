@@ -17,7 +17,7 @@ import lombok.ToString;
 @ToString
 public class PatientDto {
 	
-	private int patientId;
+	//private int patientId;
 	
 	@NotBlank(message = "Patient name cannot be empty")
 	private String patientName;
@@ -28,7 +28,7 @@ public class PatientDto {
 	
 	@NotBlank(message = "Gender is required")
 	@Pattern(
-			regexp = "Male | Female | Other", message = "Gender must be Male, Female or Other")
+			regexp = "Male|Female|Other", message = "Gender must be Male, Female or Other")
 	private String gender;
 	
 	@NotBlank(message = "Must have disease to admit in hospital")

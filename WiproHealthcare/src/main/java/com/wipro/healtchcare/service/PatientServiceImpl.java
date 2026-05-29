@@ -19,7 +19,7 @@ public class PatientServiceImpl implements IPatientService {
 	private Patient mapToPatient(PatientDto patient) {
 		Patient p = new Patient();
 		
-		p.setPatientId(patient.getPatientId());
+		//p.setPatientId(patient.getPatientId());
 		p.setPatientName(patient.getPatientName());
 		p.setPatientAge(patient.getPatientAge());
 		p.setGender(patient.getGender());

@@ -15,14 +15,13 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class HospitalDto {
-	private int hospitalId;
+	//private int hospitalId;
 	
 	@NotBlank(message = "Hospital name cannot be empty")
 	@Size(min = 3, max = 50, message = " Hospital name must be between 3 and 50 characters")
 	private String hospitalName;
 	
 	@NotBlank(message = " Location cannot be empty")
-	@Pattern(
-			regexp = "^[A-Za-z ]+$", message = " Location must contain only alphabets")
+	@Pattern(regexp = "^[A-Za-z ]+$", message = " Location must contain only alphabets")
 	private String location;
 }

@@ -1,11 +1,14 @@
 package com.wipro.healtchcare.entity;
 
-import org.springframework.boot.autoconfigure.web.WebProperties.Resources.Chain.Strategy;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,4 +30,18 @@ public class Doctor {
 	private String doctorName;
 	private String specialization;
 	private String phone;
+
+
+
+	//  Many doctors belong to one hospital
+	@ManyToOne
+	@JoinColumn(name = "hospital_id")
+	private Hospital hospital;
+
+	// One doctor has many appointments
+	@OneToMany(mappedBy = "doctor")
+	private List<Appointment> appointments;
+
+
+	
 }

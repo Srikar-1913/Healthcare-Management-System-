@@ -8,20 +8,37 @@ import org.springframework.stereotype.Service;
 
 import com.wipro.healtchcare.dto.AppointmentDto;
 import com.wipro.healtchcare.entity.Appointment;
+import com.wipro.healtchcare.entity.Doctor;
+import com.wipro.healtchcare.entity.Patient;
 import com.wipro.healtchcare.repository.IAppointmentRepository;
+import com.wipro.healtchcare.repository.IDoctorRepository;
+import com.wipro.healtchcare.repository.IPatientRepository;
 
 @Service
 public class AppointmentServiceImpl implements IAppointmentService {
 
     @Autowired
     private IAppointmentRepository appointmentRepo;
+    
+    @Autowired
+    private IDoctorRepository doctorRepo;
+    
+    @Autowired
+    private IPatientRepository patientRepo;
 
     private Appointment mapToAppointment(AppointmentDto appointment) {
     	
         Appointment a = new Appointment();
-        a.setAppointmentId(appointment.getAppointmentId());
+        //a.setAppointmentId(appointment.getAppointmentId());
+        
         a.setAppointmentDate(appointment.getAppointmentDate());
         a.setStatus(appointment.getStatus());
+        
+        Doctor d = doctorRepo.findById(appointment.getPatientId()).orElse(null);
+        Patient p = patientRepo.findById(appointment.getPatientId()).orElse(null);
+        
+        a.setDoctor(d);
+        a.setPatient(p);
         
         return a;
     }

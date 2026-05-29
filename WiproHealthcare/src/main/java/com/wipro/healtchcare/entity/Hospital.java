@@ -1,9 +1,12 @@
 package com.wipro.healtchcare.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,5 +28,12 @@ public class Hospital {
 	
 	private String hospitalName;
 	private String location;
+	
+	
+
+		// One hospital has many doctors
+	    @OneToMany(mappedBy = "hospital")
+	    private List<Doctor> doctors;
+
 	
 }
